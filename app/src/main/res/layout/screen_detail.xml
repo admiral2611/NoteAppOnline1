@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDark"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="13dp"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="date"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/done"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:src="@drawable/donecheck"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateTime">
+
+        <View
+            android:id="@+id/colorView"
+            android:layout_width="5sp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10sp"
+            android:layout_marginLeft="10sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etNoteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginEnd="20sp"
+            android:background="@null"
+            android:fontFamily="@font/manropebold"
+            android:hint="Notes Title"
+            android:maxLines="1"
+            android:paddingStart="5sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutWebUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreyDark"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etWebLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/exo2variablefont"
+                android:hint="https"
+                android:paddingLeft="13sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <ImageView
+                android:id="@+id/imgUrlDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:src="@drawable/ic_cancel"
+                android:visibility="gone"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etNoteDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@null"
+        android:fontFamily="@font/exo2variablefont"
+        android:hint="Enter Notes Here"
+        android:paddingStart="13dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutWebUrl" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/one"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="end"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/one"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNoteDesc" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/two"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="end"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/two"
+        app:layout_constraintStart_toEndOf="@+id/one"
+        app:layout_constraintTop_toBottomOf="@+id/etNoteDesc" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/three"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="end"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/thee"
+        app:layout_constraintStart_toEndOf="@+id/two"
+        app:layout_constraintTop_toBottomOf="@+id/etNoteDesc" />
+
+
+    <ProgressBar
+        android:id="@+id/detail_progres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNoteDesc" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.admiral26.noteapponline1.ui.home.HomePage"
+        android:label="HomePage" >
+        <action
+            android:id="@+id/action_homePage_to_detailScreen"
+            app:destination="@id/detailScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailScreen"
+        android:name="com.admiral26.noteapponline1.ui.detail.DetailScreen"
+        android:label="DetailScreen" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="bool"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
